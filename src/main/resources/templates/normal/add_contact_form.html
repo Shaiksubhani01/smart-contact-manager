@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="normal/base::Layout(~{::section})">
+<head>
+    <title>Add Contact</title>
+</head>
+
+<body>
+
+<section class="container mt-4">
+	   <div class="form-card">
+		<div class="text-right mb-3">
+		
+		</div>
+
+ 
+		
+        <h2 class="text-center mb-3">➕ Add Contact</h2>
+         
+  
+                 <!-- SESSION MESSAGE -->
+				<div th:if="${session.message}" class="alert" th:classappend="${session.message.type}">
+					<p th:text="${session.message.content}"></p>
+					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				</div>
+				
+		<!-- THEME TOGGLE && -->
+		<div class="text-right mb-3">
+			<button onclick="toggleTheme()" class="btn btn-sm btn-dark">
+				🌙 / ☀️ Toggle Theme
+			</button>
+		
+			<button onclick="window.location.href='/user/index';" style="
+				      width: 25px;
+				      height: 32px;
+				      background-color: red;
+				      color: white;
+				      font-weight: bold;
+				      border: none;
+				      border-radius: 3px;
+				      cursor: pointer;
+				      padding: 0;
+				      line-height: 25px;
+				      text-align: center;
+				    ">
+				&times;
+			</button>
+		</div>
+
+        <form th:action="@{/user/process-contact}"
+              th:object="${contact}"
+              method="post"
+              enctype="multipart/form-data">
+
+            <!-- IMAGE PREVIEW -->
+            <div class="text-center mb-4">
+                <img id="imgPreview"
+                     src="/img/default.png"
+                     class="image-preview">
+                <br>
+                <input type="file" name="profileImage"
+                       onchange="previewImage(event)">
+            </div>
+
+            <!-- TWO COLUMN FORM -->
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label>Name</label>
+                    <input type="text" class="form-control"
+                           th:field="*{name}" required>
+                    <div class="error"
+                         th:if="${#fields.hasErrors('name')}"
+                         th:errors="*{name}"></div>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Second Name</label>
+                    <input type="text" class="form-control"
+                           th:field="*{secondName}" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Email</label>
+                    <input type="email" class="form-control"
+                           th:field="*{email}" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Phone</label>
+                    <input type="number" class="form-control"
+                           th:field="*{phone}" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Work</label>
+                    <input type="text" class="form-control"
+                           th:field="*{work}">
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Description</label>
+                    <textarea class="form-control"
+                              th:field="*{description}"></textarea>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-dark px-4">Save Contact</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

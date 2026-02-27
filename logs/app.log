@@ -1,0 +1,113 @@
+2026-02-16 11:03:28 [restartedMain] INFO  c.c.SmartContactManagerApplication - Starting SmartContactManagerApplication using Java 17.0.8.1 on LAPTOP-AQ7PP45G with PID 22868 (C:\NEWSTSWP\SmartContactManager-master\target\classes started by ssubh in C:\NEWSTSWP\SmartContactManager-master)
+2026-02-16 11:03:28 [restartedMain] DEBUG c.c.SmartContactManagerApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2026-02-16 11:03:28 [restartedMain] INFO  c.c.SmartContactManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-16 11:03:28 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\ssubh\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.5.0.0\ojdbc11-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/ssubh/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.5.0.0/oraclepki.jar
+2026-02-16 11:03:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-16 11:03:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-16 11:03:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16 11:03:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
+2026-02-16 11:03:29 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-02-16 11:03:29 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-16 11:03:29 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-02-16 11:03:29 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-16 11:03:29 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1689 ms
+2026-02-16 11:03:30 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16 11:03:30 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2026-02-16 11:03:30 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-02-16 11:03:30 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-16 11:03:30 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-16 11:03:30 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2026-02-16 11:03:31 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-16 11:03:31 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 11:03:31 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16 11:03:32 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@868fe0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c009cfa, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a2cb16c, org.springframework.security.web.header.HeaderWriterFilter@49263043, org.springframework.security.web.authentication.logout.LogoutFilter@18ba0c71, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@32f9c6ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e386acb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@512fda90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@410c9602, org.springframework.security.web.session.SessionManagementFilter@4b785fdc, org.springframework.security.web.access.ExceptionTranslationFilter@3091082b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f982c8]
+2026-02-16 11:03:33 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-16 11:03:33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-16 11:03:33 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 5.69 seconds (JVM running for 6.45)
+2026-02-16 11:03:45 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-16 11:03:45 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-16 11:03:45 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-02-16 11:03:45 [http-nio-8080-exec-3] INFO  c.c.controllers.HomeController - Home page requested
+2026-02-16 11:03:45 [http-nio-8080-exec-6] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 11:03:46 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 11:03:46 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 11:03:52 [http-nio-8080-exec-4] INFO  c.c.c.OtpAuthValidatorController - Login attempt for user: ssubhanishaik6@gmail.com
+2026-02-16 11:03:52 [http-nio-8080-exec-4] INFO  c.c.c.OtpAuthValidatorController - Password verified successfully for user: ssubhanishaik6@gmail.com
+2026-02-16 11:03:52 [http-nio-8080-exec-4] DEBUG c.c.c.OtpAuthValidatorController - Generated OTP for user ssubhanishaik6@gmail.com: 377306
+2026-02-16 11:03:52 [http-nio-8080-exec-4] INFO  c.c.mailsender.EmailService - Preparing to send email to: ssubhanishaik6@gmail.com
+2026-02-16 11:03:57 [http-nio-8080-exec-4] INFO  c.c.mailsender.EmailService - Email sent successfully to: ssubhanishaik6@gmail.com
+2026-02-16 11:03:57 [http-nio-8080-exec-4] INFO  c.c.c.OtpAuthValidatorController - OTP sent successfully to user: ssubhanishaik6@gmail.com
+2026-02-16 11:03:57 [http-nio-8080-exec-10] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 11:04:11 [http-nio-8080-exec-9] INFO  c.c.c.OtpAuthValidatorController - OTP verified successfully for user: ssubhanishaik6@gmail.com
+2026-02-16 11:04:11 [http-nio-8080-exec-9] INFO  c.c.c.OtpAuthValidatorController - User logged in successfully: ssubhanishaik6@gmail.com
+2026-02-16 11:04:11 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:04:11 [http-nio-8080-exec-3] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:04:13 [http-nio-8080-exec-1] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:04:13 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Fetching contacts for user: ssubhanishaik6@gmail.com | Page: 0
+2026-02-16 11:04:19 [http-nio-8080-exec-10] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:04:19 [http-nio-8080-exec-10] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:04:21 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:04:21 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Add contact page opened
+2026-02-16 11:04:22 [http-nio-8080-exec-6] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:04:22 [http-nio-8080-exec-6] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:04:24 [http-nio-8080-exec-10] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:06:22 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:07:21 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:07:34 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:09:25 [http-nio-8080-exec-10] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:09:32 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:09:32 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:09:34 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:11:12 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:11:12 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:11:14 [http-nio-8080-exec-1] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:12:39 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:12:47 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:12:47 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:13:02 [http-nio-8080-exec-8] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:14:02 [http-nio-8080-exec-9] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:16:06 [http-nio-8080-exec-8] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:16:48 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:17:31 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:17:37 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:17:50 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:18:07 [http-nio-8080-exec-9] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:18:19 [http-nio-8080-exec-1] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:18:19 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:18:21 [http-nio-8080-exec-10] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:13 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:15 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:15 [http-nio-8080-exec-8] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:17 [http-nio-8080-exec-6] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:18 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:22 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:26 [http-nio-8080-exec-6] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:26 [http-nio-8080-exec-6] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:19:29 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:31 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:31 [http-nio-8080-exec-4] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:19:33 [http-nio-8080-exec-10] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:33 [http-nio-8080-exec-10] INFO  c.c.controllers.HomeController - Fetching contacts for user: ssubhanishaik6@gmail.com | Page: 0
+2026-02-16 11:19:35 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:35 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:19:37 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:37 [http-nio-8080-exec-4] INFO  c.c.controllers.HomeController - Add contact page opened
+2026-02-16 11:19:38 [http-nio-8080-exec-6] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:19:38 [http-nio-8080-exec-6] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:19:40 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:20:21 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:20:26 [http-nio-8080-exec-8] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:20:38 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:20:42 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:20:42 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:20:44 [http-nio-8080-exec-6] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:20:44 [http-nio-8080-exec-6] INFO  c.c.controllers.HomeController - Fetching contacts for user: ssubhanishaik6@gmail.com | Page: 0
+2026-02-16 11:20:48 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 11:20:48 [http-nio-8080-exec-4] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 11:21:12 [http-nio-8080-exec-10] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 11:23:36 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-02-16 11:23:36 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-16 11:23:36 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-02-16 11:23:36 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 11:23:36 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-16 11:23:37 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

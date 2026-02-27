@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Register | Smart Contact Manager</title>
+</head>
+
+<body>
+
+	<section style="
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url('https://images.unsplash.com/photo-1521791136064-7986c292021');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+">
+
+		<div class="container">
+			<div class="row justify-content-center">
+
+				<div class="col-md-5">
+
+					<!-- SIGNUP CARD -->
+					<div style="
+                    background:#1f1f1f;
+                    padding:30px;
+                    border-radius:12px;
+                    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+                    color:#ffffff;
+                ">
+
+						<!-- ALERT MESSAGE -->
+						<div th:if="${session.message}" class="alert" th:classappend="${session.message.type}"
+							role="alert">
+							<p th:text="${session.message.content}"></p>
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+
+						<!-- LOGO -->
+						<div class="text-center mb-3">
+							<img style="width:70px;" th:src="@{/img/registered.png}" alt="Register">
+						</div>
+
+						<h3 class="text-center mb-4" style="font-weight:600;">
+							Create your account
+						</h3>
+
+						<!-- SIGNUP FORM -->
+						<form th:action="@{/do_register}" method="post" th:object="${user}">
+
+							<!-- NAME -->
+							<div class="form-group">
+								<label>Your Name</label>
+								<input type="text" name="name" class="form-control"
+									th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}"
+									placeholder="Enter your name" th:value="${user.name}" required>
+								<div class="invalid-feedback" th:each="e:${#fields.errors('name')}" th:text="${e}">
+								</div>
+							</div>
+
+							<!-- EMAIL -->
+							<div class="form-group">
+								<label>Email</label>
+								<input type="email" name="email" class="form-control" placeholder="Enter your email"
+									th:value="${user.email}" required>
+							</div>
+
+							<!-- PASSWORD -->
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" name="password" class="form-control"
+									placeholder="Create a password" required>
+							</div>
+
+							<!-- ABOUT -->
+							<div class="form-group">
+								<textarea name="about" rows="3" class="form-control"
+									placeholder="Tell us about yourself (optional)" th:text="${user.about}">
+                            </textarea>
+							</div>
+
+							<!-- TERMS -->
+							<div class="form-group form-check text-center">
+								<input type="checkbox" name="agreement" class="form-check-input" id="agreement">
+								<label for="agreement" style="font-size:14px;">
+									I accept the terms & conditions
+								</label>
+							</div>
+
+							<!-- BUTTONS -->
+							<div class="text-center mt-3">
+								<button type="submit" class="btn" style="
+                                        background:#000000;
+                                        color:#ffffff;
+                                        font-weight:600;
+                                        padding:8px 25px;
+                                        border:none;
+                                    ">
+									Register
+								</button>
+
+								<button type="reset" class="btn btn-outline-light ml-2">
+									Reset
+								</button>
+							</div>
+
+							<!-- LOGIN LINK -->
+							<div class="text-center mt-3">
+								<small>
+									Already have an account?
+									<a th:href="@{/signin}" style="color:#9ecbff;">
+										Login here
+									</a>
+								</small>
+							</div>
+
+						</form>
+					</div>
+					<!-- END CARD -->
+
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+</html>

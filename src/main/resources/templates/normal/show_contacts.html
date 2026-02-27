@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>user dashboard</title>
+</head>
+
+<body>
+
+	<section style="
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
+    background-size:cover;
+    background-position:center;
+    padding:40px 0;
+">
+
+		<div class="container">
+
+			<!-- PAGE TITLE -->
+			<div class="text-center mb-4">
+				<h1 style="color:#ffffff; font-weight:600;">
+					📇 All Contacts
+				</h1>
+				<p style="color:#bdbdbd;">
+					Manage, update, and organize your contacts
+				</p>
+			</div>
+
+			<!-- ALERT MESSAGE -->
+			<div th:if="${session.message}" class="alert" th:classappend="${session.message.type}" role="alert">
+
+				<p th:text="${session.message.content}"></p>
+				<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+			</div>
+			
+<!-- Close button top-right corner -->
+<button onclick="window.location.href='/user/index';" style="
+            position: absolute;
+            right: 632px;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 25px;
+            text-align: center;
+        ">
+	&times;
+</button>
+    
+
+
+			<!-- CONTACT TABLE CARD -->
+			<div style="
+        background:#1f1f1f;
+        padding:25px;
+        border-radius:12px;
+        box-shadow:0 15px 40px rgba(0,0,0,0.6);
+    ">
+        
+      
+		
+				<!-- ================= EMPTY STATE ================= -->
+				<div th:if="${#lists.isEmpty(allContacts.content)}" class="alert alert-info text-center">
+
+					No contacts found. Please add a contact.
+				</div>
+
+				<!-- ================= TABLE ================= -->
+				<table th:if="${!#lists.isEmpty(allContacts.content)}"
+					class="table table-dark table-hover table-bordered align-middle">
+
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Second Name</th>
+							<th>Work</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<th>Description</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="Contacts : ${allContacts.content}">
+							<td>
+								<img class="my_profile_picture" th:src="@{'/img/'+${Contacts.image}}"
+									style="width:40px; height:40px; border-radius:50%; margin-right:10px;">
+
+								<span th:text="${Contacts.name}"></span>
+							</td>
+
+							<td th:text="${Contacts.secondName}"></td>
+							<td th:text="${Contacts.work}"></td>
+
+							<td>
+								<a th:href="@{'/user/'+${Contacts.contact_id}+'/contact'}" style="color:#9ecbff;">
+									<span th:text="${Contacts.email}"></span>
+								</a>
+							</td>
+
+							<td th:text="${Contacts.phone}"></td>
+							<td th:text="${Contacts.description}"></td>
+
+							<td>
+								<button th:onclick="|deleteContact(${Contacts.contact_id})|"
+									class="btn btn-outline-danger btn-sm mb-1">
+									Delete
+								</button>
+
+								<form method="post" th:action="@{'/user/update-contact/'+${Contacts.contact_id}}">
+									<button class="btn btn-outline-primary btn-sm">
+										Update
+									</button>
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- ================= PAGINATION ================= -->
+				<nav class="mt-4" th:if="${totalPages > 1}">
+
+					<ul class="pagination justify-content-center">
+
+						<li th:if="${currentPage!=0}" class="page-item">
+							<a th:href="@{'/user/show_contacts/'+${currentPage-1}}" class="page-link">
+								Previous
+							</a>
+						</li>
+
+						<li th:each="i:${#numbers.sequence(1,totalPages)}"
+							th:classappend="${currentPage==i-1?'active':''}" class="page-item">
+
+							<a th:href="@{'/user/show_contacts/'+${i-1}}" class="page-link">
+								<span th:text="${i}"></span>
+							</a>
+						</li>
+
+						<li th:if="${currentPage+1!=totalPages}" class="page-item">
+
+							<a th:href="@{'/user/show_contacts/'+${currentPage+1}}" class="page-link">
+								Next
+							</a>
+						</li>
+
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

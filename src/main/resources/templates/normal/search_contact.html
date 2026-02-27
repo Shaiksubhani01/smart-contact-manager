@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="normal/base::Layout(~{::section})">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Search Contact</title>
+</head>
+
+<body>
+
+<section style="
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
+    background-size:cover;
+    background-position:center;
+    padding:40px 0;
+">
+<!-- Close button top-right corner -->
+
+<button onclick="window.location.href='/user/index';" style="
+            position: absolute; 
+            right: 632px; 
+            width: 50px; 
+            height: 25px;
+           background-color: red;
+            color: white;
+             font-weight: bold;
+              border: none;
+               border-radius: 3px;
+                cursor: pointer;
+                 padding: 0; 
+                 line-height: 25px;
+                  text-align: center;
+        ">
+	Close
+</button>
+
+<div class="container text-white">
+<h2><center>Search Contacts</center></h2>
+    <!-- 🔍 Contact Search Bar -->
+    <div class="mb-4">
+        <form th:action="@{/user/search_contact}" method="get">
+            <input type="text"
+                   name="query"
+                   th:value="${query}"
+                   placeholder="Enter contact name here..."
+                   style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc;"
+                   required>
+        </form>
+    </div>
+
+    <!-- ================= TABLE ================= -->
+    <table th:if="${contacts != null and !#lists.isEmpty(contacts.content)}"
+           class="table table-dark table-hover table-bordered align-middle">
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Second Name</th>
+                <th>Work</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="contact : ${contacts.content}">
+
+                <td>
+                    <img class="my_profile_picture"
+                         th:src="@{'/img/'+${contact.image}}"
+                         style="width:40px; height:40px; border-radius:50%; margin-right:10px;">
+
+                    <span th:text="${contact.name}"></span>
+                </td>
+
+                <td th:text="${contact.secondName}"></td>
+                <td th:text="${contact.work}"></td>
+
+                <td>
+                    <a th:href="@{'/user/'+${contact.contact_id}+'/contact'}"
+                       style="color:#9ecbff;">
+                        <span th:text="${contact.email}"></span>
+                    </a>
+                </td>
+
+                <td th:text="${contact.phone}"></td>
+                <td th:text="${contact.description}"></td>
+
+                <td>
+                    <button th:onclick="|deleteContact(${contact.contact_id})|"
+                            class="btn btn-outline-danger btn-sm mb-1">
+                        Delete
+                    </button>
+
+                    <form method="post"
+                          th:action="@{'/user/update-contact/'+${contact.contact_id}}">
+                        <button class="btn btn-outline-primary btn-sm">
+                            Update
+                        </button>
+                    </form>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- No Result Message -->
+    <div th:if="${contacts != null and contacts.totalElements == 0}"
+         class="text-center mt-3">
+        <h5>No contacts found.</h5>
+    </div>
+
+    <!-- ================= PAGINATION ================= -->
+    <div class="text-center mt-3"
+         th:if="${contacts != null and contacts.totalPages > 1}">
+
+        <a th:if="${contacts.hasPrevious()}"
+           th:href="@{'/user/search_contact?query=' + ${query} + '&page=' + ${contacts.number - 1}}"
+           class="btn btn-light btn-sm me-2">
+            Previous
+        </a>
+
+        <span>
+            Page [[${contacts.number + 1}]] of [[${contacts.totalPages}]]
+        </span>
+
+        <a th:if="${contacts.hasNext()}"
+           th:href="@{'/user/search_contact?query=' + ${query} + '&page=' + ${contacts.number + 1}}"
+           class="btn btn-light btn-sm ms-2">
+            Next
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>User Dashboard</title>
+</head>
+
+<body>
+
+	<section style="
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+
+					<!-- DASHBOARD CARD -->
+					<div style="
+                    background:#1f1f1f;
+                    padding:40px;
+                    border-radius:12px;
+                    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+                    color:#ffffff;
+                    text-align:center;
+                ">
+
+						<h1 style="font-weight:600; margin-bottom:15px;">
+							Welcome to your Dashboard 👋
+						</h1>
+
+						<p style="font-size:18px; color:#bdbdbd; margin-bottom:30px;">
+							Hello, <strong th:text="${contact}">User</strong>
+						</p>
+
+						<!-- QUICK ACTION CARDS -->
+						<div class="row">
+
+							<!-- VIEW CONTACTS -->
+							<div class="col-md-4 mb-3">
+								<a th:href="@{/user/show_contacts/{page}(page=0)}"
+									style="text-decoration:none; color:inherit;">
+									<div style="
+                                    padding:20px;
+                                    border-radius:10px;
+                                    background:#2a2a2a;
+                                    cursor:pointer;
+                                    transition:all 0.3s ease;
+                                " onmouseover="this.style.background='#3a3a3a'"
+										onmouseout="this.style.background='#2a2a2a'">
+
+										<h3>📇</h3>
+										<h5>View Contacts</h5>
+										<p class="text-muted">
+											Manage all in one place
+										</p>
+
+									</div>
+								</a>
+							</div>
+
+							<!-- ADD CONTACT -->
+							<div class="col-md-4 mb-3">
+								<a th:href="@{/user/add_contact}" style="text-decoration:none; color:inherit;">
+									<div style="
+                                    padding:20px;
+                                    border-radius:10px;
+                                    background:#2a2a2a;
+                                    cursor:pointer;
+                                    transition:all 0.3s ease;
+                                " onmouseover="this.style.background='#3a3a3a'"
+										onmouseout="this.style.background='#2a2a2a'">
+
+										<h3>➕</h3>
+										<h5>Add Contact</h5>
+										<p class="text-muted">
+											Create contacts easily
+										</p>
+										
+
+									</div>
+								</a>
+							</div>
+
+							<!-- SEARCH CONTACTS -->
+							<div class="col-md-4 mb-3">
+								<a th:href="@{/user/search_contact_form}" style="text-decoration:none; color:inherit;">
+									<div style="
+							            padding:20px;
+							            border-radius:10px;
+							            background:#2a2a2a;
+							            cursor:pointer;
+							            transition:all 0.3s ease;" onmouseover="this.style.background='#3a3a3a'"
+										onmouseout="this.style.background='#2a2a2a'">
+							
+										<h3>🔍</h3>
+										<h5>Search Contacts</h5>
+										<p class="text-muted">Find contacts instantly</p>
+							
+									</div>
+								</a>
+							</div>
+                <!--............................................>
+						</div>
+						<!-- END QUICK ACTIONS -->
+
+					</div>
+					<!-- END DASHBOARD CARD -->
+
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+</html>

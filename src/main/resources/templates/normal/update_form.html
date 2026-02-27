@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Update Contact</title>
+</head>
+
+<body>
+
+	<section class="container mt-4">
+
+		<div class="card" style="border-radius:12px; box-shadow:0 15px 40px rgba(0,0,0,0.3);">
+
+			<div class="card-body p-4">
+
+				<h2 class="text-center mb-2">✏️ Update Contact</h2>
+				<p class="text-center text-muted mb-4">
+					Modify the details and save changes
+				</p>
+
+				<!-- SESSION MESSAGE -->
+				<div th:if="${session.message}" class="alert" th:classappend="${session.message.type}">
+					<p th:text="${session.message.content}"></p>
+					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				</div>
+
+				<!-- UPDATE FORM -->
+				<form th:object="${contact}" th:action="@{/user/process-update}" method="post"
+					enctype="multipart/form-data">
+
+					<!-- HIDDEN CONTACT ID -->
+					<input type="hidden" name="contact_id" th:value="${contact.contact_id}" />
+
+					<!-- IMAGE PREVIEW -->
+					<div class="text-center mb-4">
+						<img id="imgPreview" th:src="@{'/img/' + ${contact.image}}" style="
+					        width:100px;
+					        height:100px;
+					        object-fit:cover;
+					        border-radius:50%;
+					        border:1px solid #ccc;
+					     ">
+
+						<br><br>
+						<input type="file" name="profileImage" class="form-control-file" onchange="previewImage(event)">
+						<small class="text-muted">Choose a new profile picture</small>
+					</div>
+
+					<!-- TWO COLUMN LAYOUT -->
+					<div class="row">
+
+						<!-- NAME -->
+						<div class="col-md-6 mb-3">
+							<label>Name</label>
+							<input type="text" class="form-control" th:field="*{name}" required>
+							<div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+						</div>
+
+						<!-- SECOND NAME -->
+						<div class="col-md-6 mb-3">
+							<label>Second Name</label>
+							<input type="text" class="form-control" th:field="*{secondName}" required>
+						</div>
+
+						<!-- EMAIL -->
+						<div class="col-md-6 mb-3">
+							<label>Email</label>
+							<input type="email" class="form-control" th:field="*{email}" required>
+							<div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+						</div>
+
+						<!-- PHONE -->
+						<div class="col-md-6 mb-3">
+							<label>Phone</label>
+							<input type="number" class="form-control" th:field="*{phone}" required>
+						</div>
+
+						<!-- WORK -->
+						<div class="col-md-6 mb-3">
+							<label>Work</label>
+							<input type="text" class="form-control" th:field="*{work}">
+						</div>
+
+						<!-- DESCRIPTION -->
+						<div class="col-md-6 mb-3">
+							<label>Description</label>
+							<textarea id="mytextarea" class="form-control" rows="3" th:field="*{description}">
+						</textarea>
+
+						</div>
+
+					</div>
+
+					<!-- ACTION BUTTON -->
+					<div class="text-center mt-4">
+						<button type="submit" class="btn" style="
+                                background:#000000;
+                                color:#ffffff;
+                                font-weight:600;
+                                padding:10px 30px;
+                                border:none;
+                                transition: background-color 0.3s ease;
+                            " onmouseover="this.style.backgroundColor='#2e2e2e'"
+							onmouseout="this.style.backgroundColor='#000000'">
+							Update Contact
+						</button>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+
+		<!-- TINYMCE -->
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector: '#mytextarea',
+				height: 120   // 🔥 IMPORTANT
+			});
+		</script>
+
+
+		<!-- IMAGE PREVIEW SCRIPT -->
+		<script>
+			function previewImage(event) {
+				const reader = new FileReader();
+				reader.onload = function () {
+					document.getElementById('imgPreview').src = reader.result;
+				}
+				reader.readAsDataURL(event.target.files[0]);
+			}
+		</script>
+
+	</section>
+
+</body>
+
+</html>

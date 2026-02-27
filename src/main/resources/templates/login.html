@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<body>
+
+	<section style="
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+        url('/img/loginpage.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-5">
+
+					<div style="
+    background:#1f1f1f;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+">
+
+						<h3 class="text-center text-light mb-4">
+							🔐 Smart Contact Manager
+						</h3>
+
+						<!-- ================= LOGIN FORM ================= -->
+						<div th:if="${otpSent == null}">
+
+							<form th:action="@{/login-verify}" method="post">
+
+								<div th:if="${error}" class="alert alert-danger text-center">
+									Invalid Username or Password
+								</div>
+
+								<div class="mb-3">
+									<label class="text-light">Email</label>
+									<input type="text" name="username" class="form-control bg-dark text-light border-0"
+										required>
+								</div>
+
+								<div class="mb-3">
+									<label class="text-light">Password</label>
+									<input type="password" name="password"
+										class="form-control bg-dark text-light border-0" required>
+								</div>
+
+								<button type="submit" class="btn btn-info w-100" style="border-radius:30px;">
+									Send OTP
+								</button>
+
+							</form>
+
+						</div>
+
+						<!-- ================= OTP FORM ================= -->
+						<div th:if="${otpSent}">
+
+							<div class="alert alert-success text-center">
+								OTP sent to your email
+							</div>
+
+							<form th:action="@{/validate-otp}" method="post">
+
+								<div th:if="${error}" class="alert alert-danger text-center">
+									<span th:text="${error}"></span>
+								</div>
+
+								<div class="mb-3">
+									<label class="text-light">Enter OTP</label>
+									<input type="text" name="otp"
+										class="form-control bg-dark text-light border-0 text-center"
+										placeholder="Enter 6-digit OTP" maxlength="6" required>
+								</div>
+
+								<button type="submit" class="btn btn-success w-100" style="border-radius:30px;">
+									Verify & Login
+								</button>
+
+							</form>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+</html>

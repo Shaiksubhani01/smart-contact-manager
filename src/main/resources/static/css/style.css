@@ -1,0 +1,191 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000000;   /* 🔥 match navbar */
+}
+
+/* ================= NAVBAR ================= */
+.bg-primary {
+    background: #000000 !important;
+}
+
+/* ================= REMOVE BOOTSTRAP CONTAINER GAPS ================= */
+.container,
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* ================= HOME BANNER ================= */
+.banner {
+    width: 100vw;              /* full width */
+    height: calc(100vh - 56px);
+    margin: 0;
+    padding: 0;
+
+    background:
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+        url(../img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= CONTENT ================= */
+.content {
+    width: 100vw;
+    height: calc(100vh - 56px);
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    background: #111111;   /* 🔥 prevent white bleed */
+}
+
+/* ================= LOGIN PAGE ================= */
+#login {
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-box {
+    background: #ffffff;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* ================= PROFILE IMAGE ================= */
+.my_profile_picture {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+
+/* ===== THEME ===== */
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --card-bg: #1f1f1f;
+    --text-color: #ffffff;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ===== CARD ===== */
+.form-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    padding: 30px;
+}
+
+/* ===== IMAGE PREVIEW ===== */
+.image-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px dashed #ccc;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* ===== VALIDATION ===== */
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+
+
+
+/*sidebar style
+
+@media only screen and (max-width: 600px){
+	.sidebar{
+	 display:none;
+     width:80%!important;
+     background: white;
+     height:100vh;
+     position: fixed;
+     padding-top:20px;
+}
+.content{
+	
+	margin-left:0%!important;
+}
+}
+
+.sidebar{
+     width:18%;
+     background: white;
+     height:100%;
+     position: fixed;
+     padding-top: 45px;
+}
+.sidebar a{
+	
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+}
+	
+.sidebar a:hover{
+	color: black;
+}
+.sidebar.divider{
+	
+	height: .5px;
+	width: 100%;
+	background: black;
+	margin-top: 10px;
+}
+.content{
+	
+	margin-left: 18%;
+}
+.banner{
+	position: fixed;
+ }
+.sidebar .crossBtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}*/
+
+
+
+
+
+
+
+
