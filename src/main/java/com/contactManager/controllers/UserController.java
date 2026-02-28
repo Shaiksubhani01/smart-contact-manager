@@ -357,7 +357,7 @@ public class UserController {
 	}
 	
 	
-	  // Mapping for Search Contacts page
+	  // Mapping for Search Contacts page-Done 
     @GetMapping("/search_contact_form")
     public String searchContactPage() {
         
@@ -372,7 +372,7 @@ public class UserController {
             Principal principal,
             Model model) {
 
-        // Get logged-in user email
+        // Get logged-in user email  
         String email = principal.getName();
 
         Optional<User> optionalUser = userRepository.findByEmail(email);
